@@ -10,8 +10,8 @@
 ```
 [准备] 时间+日期（系统命令，两步）→ agent-name（查注册表）→ 话题（查注册表归一化）
     ↓
-[定位文件] <diary_dir>/YYYY-MM/YYYY-MM-DD.md
-    ※ YYYY-MM 取自系统命令日期；当月子目录不存在则创建
+[定位文件] <DIARY_DIR>/YYYY-MM/YYYY-MM-DD.md
+    ※ DIARY_DIR 来自 SKILL.md 配置；YYYY-MM 取自系统命令日期；当月子目录不存在则创建
     ↓
 [读文件] 文件存在？
     否 → 创建文件
@@ -58,7 +58,8 @@ powershell -Command "Get-Date -Format 'yyyy-MM-dd'"  # Windows
 - 禁止根据 `<env>` 中的 `Today's date` 推断（那个日期可能是会话开始时冻结的，跨天不更新）
 - **日期必须来自当前执行的系统命令，不接受任何其他来源。**
 
-**确定写入路径**：`<diary_dir>/YYYY-MM/YYYY-MM-DD.md`
+**确定写入路径**：`<DIARY_DIR>/YYYY-MM/YYYY-MM-DD.md`
+- `DIARY_DIR` 来自 SKILL.md 的配置项（首次使用已在激活阶段确认）
 - `YYYY-MM` 取自系统命令返回的日期，如 `2026-10`
 - 当月子目录不存在 → 自动创建
 - 示例：`<DIARY_DIR>\2026-10\2026-10-13.md`
@@ -97,9 +98,9 @@ powershell -Command "Get-Date -Format 'yyyy-MM-dd'"  # Windows
 读取近 3 天的日记文件（**不限 agent**）：
 
 ```
-<diary_dir>/<对应月份>/<昨天>.md
-<diary_dir>/<对应月份>/<前天>.md
-<diary_dir>/<对应月份>/<大前天>.md
+<DIARY_DIR>/<对应月份>/<昨天>.md
+<DIARY_DIR>/<对应月份>/<前天>.md
+<DIARY_DIR>/<对应月份>/<大前天>.md
 ```
 
 **⚠️ 跨月处理**：近 3 天可能跨越月份（如今天是 11-01，大前天在 10 月）——每一天的目录按该天自己的月份定位，不要统一用今天的月份。
