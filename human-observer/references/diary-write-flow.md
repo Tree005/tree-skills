@@ -11,7 +11,7 @@
 [准备] 时间+日期（系统命令，两步）→ agent-name（查注册表）→ 话题（查注册表归一化）
     ↓
 [定位文件] <DIARY_DIR>/YYYY-MM/YYYY-MM-DD.md
-    ※ DIARY_DIR 来自 SKILL.md 配置；YYYY-MM 取自系统命令日期；当月子目录不存在则创建
+    ※ DIARY_DIR 来自环境变量 HUMAN_OBSERVER_DIARY_DIR；YYYY-MM 取自系统命令日期；当月子目录不存在则创建
     ↓
 [读文件] 文件存在？
     否 → 创建文件
@@ -59,7 +59,7 @@ powershell -Command "Get-Date -Format 'yyyy-MM-dd'"  # Windows
 - **日期必须来自当前执行的系统命令，不接受任何其他来源。**
 
 **确定写入路径**：`<DIARY_DIR>/YYYY-MM/YYYY-MM-DD.md`
-- `DIARY_DIR` 来自 SKILL.md 的配置项（首次使用已在激活阶段确认）
+- `DIARY_DIR` 来自环境变量 `HUMAN_OBSERVER_DIARY_DIR`（激活阶段已确认）
 - `YYYY-MM` 取自系统命令返回的日期，如 `2026-10`
 - 当月子目录不存在 → 自动创建
 - 示例：`<DIARY_DIR>\2026-10\2026-10-13.md`
