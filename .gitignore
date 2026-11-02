@@ -1,0 +1,9 @@
+# 白名单：仓库只收录 README、.gitignore 和顶层 skill 目录
+/*
+!/README.md
+!/LICENSE
+!/.gitignore
+!/*/
+
+# 顶层隐藏目录（.obsidian、.claude、.vscode 等）一律排除
+/.*/
