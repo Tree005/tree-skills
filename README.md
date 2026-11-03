@@ -86,6 +86,7 @@ Only skill directories, `README.md`, `LICENSE`, and `.gitignore` are tracked. Pe
 ## Adding a skill
 
 - Use a kebab-case folder name; the `name` field in `SKILL.md` must match.
+- Add the folder to the `.gitignore` allowlist so its files are tracked.
 - Write the `description` in English, one sentence on what the skill does. Quote the whole value if it contains a colon followed by a space.
 - Put invocation details in the body; long rules go in `references/`, scaffolding in `templates/`.
 - Run it on a real task before updating the Skills table.

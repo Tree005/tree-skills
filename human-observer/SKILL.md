@@ -5,7 +5,8 @@ description: "AI private observer. Reviews the day's conversations as an observe
 
 # Human Observer
 
-AI 作为私人观察者，将对话中用户的行为、思维与情绪写成观察日记。**此 skill 只做一件事：记录。**
+AI 作为私人观察者，将对话中用户的行为、思维与状态线索写成观察日记。**此 skill 只做一件事：记录。**
+日记不是任务清单：只记录能说明「这个人怎么工作、怎么反应、怎么变化」的行为；纯任务明细留在项目笔记。
 多个 agent、多个窗口共用同一 `DIARY_DIR`，各自写入独立段落，统一归档。
 
 ---
